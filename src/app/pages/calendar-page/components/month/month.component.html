@@ -1,0 +1,36 @@
+<table class="month">
+  <ng-content select="[monthName]"></ng-content>
+
+  <tbody class="month-body">
+    <ng-content select="[weekDays]"></ng-content>
+
+    @for (week of month?.days |chunk: 7; track $index) {
+    <tr class="month-week">
+      @for (day of week; track $index) { @if(day !== null) {
+      <td class="calendar-day" [colourDay]="day">
+        {{ day | date : "d" }}
+      </td>
+      } @else {
+      <td class="calendar-day"></td>
+      } }
+    </tr>
+    }
+
+    <!-- <ng-container *ngFor="let day of week">
+
+      </ng-container>
+
+    }
+
+    <tr
+
+      *ngFor="let week of month?.days | chunk : 7; trackBy: identify"
+    >
+
+    </tr> -->
+  </tbody>
+</table>
+<!--
+<ng-template #empty>
+  <td class="calendar-day"></td>
+</ng-template> -->

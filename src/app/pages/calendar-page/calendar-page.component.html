@@ -1,0 +1,10 @@
+<month [month]="month">
+  <div monthName class="month-head-row">
+    {{ month.month | monthName : "full" }}
+  </div>
+  <tr weekDays class="month-week">
+    <ng-container *ngFor="let day of weekDays">
+      <td class="calendar-day">{{ day | weekDays : "medium" }}</td>
+    </ng-container>
+  </tr>
+</month>

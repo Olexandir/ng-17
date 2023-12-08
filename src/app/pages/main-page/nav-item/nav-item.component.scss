@@ -1,0 +1,10 @@
+@import "../../../../mixins.scss";
+
+.nav-item-wrapper {
+  @include blockSize(300px, 175px);
+  @include spaces($p: 10px, $g: 10px);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 1px gray;
+  cursor: pointer;
+  user-select: none;
+}

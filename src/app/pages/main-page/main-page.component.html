@@ -1,0 +1,11 @@
+<div class="page-wrapper main-page">
+  @for (navItem of navItems; track $index) {
+  <nav-item [navItem]="navItem"></nav-item>
+  }
+
+  <!-- <nav-item
+    *ngFor="let navItem of navItems"
+    [navItem]="navItem"
+    [routerLink]="navItem.link"
+  ></nav-item> -->
+</div>

@@ -1,0 +1,6 @@
+@import "../../../mixins.scss";
+
+.main-page {
+  @include flexBox;
+  @include spaces($p: 30px, $g: 30px);
+}

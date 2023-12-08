@@ -1,0 +1,17 @@
+@mixin flexBox($ai: center, $jc: center, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+}
+
+@mixin blockSize($w: 100%, $h: 100%) {
+  width: $w;
+  height: $h;
+}
+
+@mixin spaces($m: 0, $p: 0, $g: inherit) {
+  margin: $m;
+  padding: $p;
+  gap: $g; // works only with flex either grid settings for container
+}

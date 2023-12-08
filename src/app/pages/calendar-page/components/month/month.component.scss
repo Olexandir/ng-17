@@ -1,0 +1,33 @@
+@import "../../../../../mixins.scss";
+
+.month {
+  @include flexBox($fd: column);
+
+  .month-head {
+    width: 100%;
+
+    .month-head-row {
+      @include flexBox($jc: space-around);
+      width: 100%;
+    }
+  }
+
+  .month-body {
+    @include flexBox($ai: flex-start, $jc: flex-start, $fd: column);
+
+    .month-week {
+      @include flexBox;
+    }
+  }
+}
+
+.calendar-day {
+  @include flexBox;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255, 255, 255);
+}
