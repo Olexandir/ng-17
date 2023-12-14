@@ -3,8 +3,8 @@
     {{ month.month | monthName : "full" }}
   </div>
   <tr weekDays class="month-week">
-    <ng-container *ngFor="let day of weekDays">
-      <td class="calendar-day">{{ day | weekDays : "medium" }}</td>
-    </ng-container>
+    @for(day of weekDays; track $index){
+    <td class="calendar-day">{{ day | weekDays : "medium" }}</td>
+    }
   </tr>
 </month>

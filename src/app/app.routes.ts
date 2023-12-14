@@ -21,6 +21,20 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'todos',
+    loadComponent: () =>
+      import('./pages/todos-page/todos-page.component').then(
+        (component) => component.TodosPageComponent
+      ),
+  },
+  {
+    path: 'users',
+    loadComponent: () =>
+      import('./pages/users-page/users-page.component').then(
+        (component) => component.UsersPageComponent
+      ),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '',

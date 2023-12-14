@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { InitAppService } from './services/init-app.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,4 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'ng-17';
-}
+export class AppComponent {}
