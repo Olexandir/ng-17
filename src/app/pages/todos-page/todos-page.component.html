@@ -1,6 +1,5 @@
 <div class="">
-  @if ((isLoading$ | async) === false){ @for (todo of todoList$ | async; track
-  todo.id) {
+  @if (isLoading() === false) { @for (todo of todoList(); track todo.id) {
   <div class="">{{ todo.title }}</div>
   } }
 </div>
