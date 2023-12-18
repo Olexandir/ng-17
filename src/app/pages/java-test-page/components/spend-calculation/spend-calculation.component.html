@@ -1,0 +1,46 @@
+<mat-table [dataSource]="tableDataSource">
+  <ng-container matColumnDef="Period">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>
+      Period
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row"
+      >{{ (row.start | date : "dd.MM.yyyy") || "-" }} -
+      {{ (row.end | date : "dd.MM.yyyy") || "-" }}</mat-cell
+    >
+  </ng-container>
+  <ng-container matColumnDef="Positions">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>
+      Positions
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.positions || "-" }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Days">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Days </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ days || "-" }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Hours">
+    <mat-header-cell mat-header-cell *matHeaderCellDef>
+      Hours per day
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      {{ row.hours_per_day || "-" }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Rate">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Rate </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      {{ row.rate || "-" }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Total">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      {{ days * row.hours_per_day * row.rate || "N/A" }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columns"></mat-row>
+
+  <!-- <mat-footer-row *matFooterRowDef="columns"></mat-footer-row> -->
+</mat-table>

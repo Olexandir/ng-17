@@ -1,0 +1,35 @@
+<div class="java-test-page-wrapper">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" formControlName="start" />
+        <input matEndDate placeholder="End date" formControlName="end" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Position</mat-label>
+      <input matInput placeholder="positions" formControlName="positions" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Hours</mat-label>
+      <input
+        matInput
+        placeholder="Hours per day"
+        formControlName="hours_per_day"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Rate</mat-label>
+      <input matInput placeholder="rate" formControlName="rate" />
+    </mat-form-field>
+  </form>
+
+  <spend-calculation [spCalcOptions]="spCalcOptions"></spend-calculation>
+</div>

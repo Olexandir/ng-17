@@ -35,6 +35,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'java',
+    loadComponent: () =>
+      import('./pages/java-test-page/java-test-page.component').then(
+        (component) => component.JavaTestPageComponent
+      ),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '',

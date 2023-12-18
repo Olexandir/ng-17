@@ -23,5 +23,9 @@ export class MainPageComponent {
       title: 'Calendar',
       link: '/calendar',
     },
+    {
+      title: 'Java',
+      link: '/java',
+    },
   ];
 }
