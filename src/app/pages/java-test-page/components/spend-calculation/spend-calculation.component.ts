@@ -8,6 +8,7 @@ import moment from 'moment';
   selector: 'spend-calculation',
   standalone: true,
   templateUrl: './spend-calculation.component.html',
+  styleUrls: ['./spend-calculation.component.scss'],
   imports: [MatTableModule, DatePipe],
 })
 export class SpendCalculationComponent {
@@ -16,6 +17,7 @@ export class SpendCalculationComponent {
   public tableDataSource: totalOptions[] = [];
 
   public days: number = 0;
+  public total: number = 0;
 
   public columns: string[] = [
     'Period',
@@ -30,10 +32,14 @@ export class SpendCalculationComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.tableDataSource = [this.spCalcOptions];
-    this.days = moment(this.tableDataSource[0].end).diff(
-      this.tableDataSource[0].start,
+    this.days = moment(this.spCalcOptions.end).diff(
+      this.spCalcOptions.start,
       'days'
     );
+    this.total =
+      this.days *
+      (this.spCalcOptions?.hours_per_day || 1) *
+      (this.spCalcOptions.rate || 1);
   }
   ngOnInit(): void {}
 }

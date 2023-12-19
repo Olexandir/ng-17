@@ -1,0 +1,22 @@
+.table {
+  width: 100%;
+  box-shadow: 0 0 10px #808080;
+  border-radius: 5px;
+  overflow: hidden;
+  height: fit-content;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0 0 15px;
+    background: whitesmoke;
+    height: 50px;
+    color: gray;
+    font-size: 18px;
+  }
+}
+
+.mat-mdc-footer-row {
+  background: lightcyan;
+}
